@@ -9,7 +9,7 @@
     <label>Height in inches: <%= f.text_field :height %></label><br />
 
     <%= f.label :room_id, "Room" %>
-    <%= f.collection_select :room_id, @rooms, :id, :name, prompt: "Where will they live?" %>
+    <%= f.collection_select :room_id, @rooms, :id, :name, prompt: "Select Room" %>
 
     <%= f.submit %>
 <% end %>

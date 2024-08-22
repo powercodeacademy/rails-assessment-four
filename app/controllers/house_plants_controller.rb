@@ -15,11 +15,12 @@ class HousePlantsController < ApplicationController
   def create
     @house_plant = HousePlant.new(house_plant_params)
     @room = @house_plant.room
+    @rooms = Room.all
 
     if @house_plant.save
       redirect_to room_path(@room)
     else
-      flash.now.alert = @house_plant.errors.full_messages.to_sentence
+      flash.now[:alert] = "Name and Description must be present"
       render :new
     end
   end
