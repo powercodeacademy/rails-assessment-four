@@ -1,0 +1,9 @@
+<h1><%= @room.name %></h1>
+<p>Occupancy: <%= @room.occupancy %> people</p>
+
+<h2>House Plants</h2>
+<ul>
+  <% @house_plants.each do |plant| %>
+    <li><%= link_to plant.plant_type, plant %></li>
+  <% end %>
+</ul>
