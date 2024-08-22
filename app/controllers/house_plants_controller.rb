@@ -4,6 +4,6 @@ class HousePlantsController < ApplicationController
   end
 
   def show
-    @pizza = HousePlant.find(params[:id])
+    @house_plant = HousePlant.find(params[:id])
   end
 end
