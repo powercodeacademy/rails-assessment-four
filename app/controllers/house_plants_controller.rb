@@ -20,7 +20,7 @@ class HousePlantsController < ApplicationController
     if @house_plant.save
       redirect_to @house_plant
     else
-      flash.now[:alert] = "Name and Description must be present"
+      flash.now[:alert] = "Height must be present"
       render :new
     end
   end
