@@ -1,0 +1,22 @@
+<h1>Add New Plant:</h1>
+
+<%= form_with model: @house_plant, local: true do |form| %>
+  <div>
+    <%= form.label :plant_type %>
+    <%= form.text_field :plant_type %>
+  </div>
+
+  <div>
+    <%= form.label :height %>
+    <%= form.number_field :height %>
+  </div>
+
+    <div>
+    <%= form.label :room_id %>
+    <%= form.collection_select :room_id, @rooms, :id, :name, prompt: "Select a room" %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Plant" %>
+  </div>
+<% end %>
