@@ -13,9 +13,13 @@ class HousePlantsController < ApplicationController
   end
 
   def create
-    house_plant = HousePlant.create!(house_plant_params)
+    @house_plant = HousePlant.new(house_plant_params)
 
-    redirect_to house_plant
+    if @house_plant.save
+      redirect_to house_plant
+    else
+      render :new
+    end
   end
 
   private
