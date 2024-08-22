@@ -10,6 +10,7 @@ class HousePlantsController < ApplicationController
   def new
     @house_plant = HousePlant.new
     @rooms = Room.all
+    @house_plant.room_id = params[:room_id] if params[:room_id]
   end
 
   def create
