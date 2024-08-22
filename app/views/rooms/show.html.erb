@@ -6,6 +6,8 @@
 <h3>Plants:</h3>
 <ul>
   <% @room.house_plants.each do |plant| %>
-    <li><%= plant.plant_type %></li>
+    <li><%= link_to plant.plant_type, house_plant_path(plant) %></li>
   <% end %>
 </ul>
+
+<%= link_to 'Add New Plant to this Room', new_house_plant_path(room_id: @room.id) %>
