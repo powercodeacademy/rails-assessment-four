@@ -5,6 +5,7 @@ class HousePlantsController < ApplicationController
 
   def show
     @house_plant = HousePlant.find(params[:id])
+    @room = @house_plant.room.id
   end
 
   def new
@@ -14,11 +15,10 @@ class HousePlantsController < ApplicationController
 
   def create
     @house_plant = HousePlant.new(house_plant_params)
-    @room = @house_plant.room
     @rooms = Room.all
 
     if @house_plant.save
-      redirect_to room_path(@room)
+      redirect_to @house_plant
     else
       flash.now[:alert] = "Name and Description must be present"
       render :new
