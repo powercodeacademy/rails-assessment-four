@@ -1,5 +1,16 @@
 <h1>Add New Plant:</h1>
 
+<% if @house_plant.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@house_plant.errors.count, "error") %> prohibited this house plant from being saved:</h2>
+    <ul>
+      <% @house_plant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with model: @house_plant, local: true do |form| %>
   <div>
     <%= form.label :plant_type %>
