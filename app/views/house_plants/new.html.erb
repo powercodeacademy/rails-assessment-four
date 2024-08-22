@@ -1,0 +1,15 @@
+<% if flash[:alert] %>
+  <p style="color: red" class="error-message"><%= flash[:alert] %></p>
+<% end %>
+
+<%= form_with(model: @house_plant,  local: true ) do |f| %>
+
+    <label>Plant Type: <%= f.text_field :plant_type %></label><br />
+
+    <label>Height in inches: <%= f.text_field :height %></label><br />
+
+    <%= f.label :room_id, "Room" %>
+    <%= f.collection_select :room_id, @rooms, :id, :name, prompt: "Where will they live?" %>
+
+    <%= f.submit %>
+<% end %>
