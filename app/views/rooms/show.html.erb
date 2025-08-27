@@ -1,7 +1,10 @@
 <h1><%= @room.name %></h1>
 <p><b>Occupancy:</b> <%= @room.occupancy %></p>
+<p>Plants</p>
 <ul>
   <% @room.house_plants.each do |plant| %>
     <li><%= link_to plant.plant_type, house_plant_path(plant) %></li>
   <% end %>
 </ul>
+<p><b>Create a New Plant in this Room</b></p>
+<%= render 'house_plants/form' %>
