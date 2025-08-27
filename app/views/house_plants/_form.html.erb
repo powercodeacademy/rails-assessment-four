@@ -1,0 +1,8 @@
+<%= form_with model: @house_plant, local: true do |f|%>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.label :plant_type %><br>
+  <%= f.text_field :plant_type %><br>
+  <%= f.label :height %><br>
+  <%= f.number_field :height %><br>
+  <%= f.submit 'Create Plant'%>
+<% end %>
