@@ -1,11 +1,24 @@
 class HousePlantsController < ApplicationController
-  before_action :set_house_plant, only: [:show]
+  before_action :set_house_plant, only: [:show, :edit]
 
   def index
     @house_plants = HousePlant.all
   end
 
   def show
+  end
+
+  def new
+    @house_plant = HousePlant.new
+  end
+
+  def create
+    @house_plant = HousePlant.new(house_plant_params)
+    if @house_plant.save
+      redirect_to @house_plant
+    else
+      render :new
+    end
   end
 
   private
