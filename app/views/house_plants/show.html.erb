@@ -1,1 +1,3 @@
 <h1> <%= @house_plant.plant_type%>'s Show Page </h1>
+<h2> Height: <%= @house_plant.height%> inches </h2>
+<h2> Room: <%= link_to @house_plant.room.name, @house_plant.room%> </h2>
