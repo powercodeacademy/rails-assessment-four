@@ -1,0 +1,5 @@
+<h1><%= @house_plant.plant_type %></h1>
+<ul>
+  <li>Height: <%= @house_plant.height %> inches</li>
+  <li>Located in: <%= link_to @house_plant.room.name, room_path(@house_plant.room) %></li>
+</ul>
