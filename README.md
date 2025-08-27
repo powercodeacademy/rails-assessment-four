@@ -27,7 +27,7 @@ We have several plants and each room could potentially house many plants. Plants
 
 Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one.
 
-1. Create the associations between models. You will have to alter the current schema to get your code working. Once you've set up your relationships properly, you will be able to run `bin/rails db:seed` without errors, and confirm in a `rails console` that the house plants and rooms have been created with the proper relations.
+1. Create the associations between models. You will have to alter the current schema to get your code working. Once you've set up your relationships properly, you will be able to run `bin/rails db:seed` without errors, and confirm in a `bin/rails console` that the house plants and rooms have been created with the proper relations.
 
 2. On the plants index page, a plant's `plant_type` should link to its show page.
 
