@@ -4,16 +4,16 @@ It's time to put our Rails know-how to the test. HQ has been looking a little dr
 
 ## Objectives
 
-+ MVC
-+ REST
-+ Request/Response Cycle
-+ Form/Form Helpers
-+ ActiveRecord
-+ Validations
+- MVC
+- REST
+- Request/Response Cycle
+- Form/Form Helpers
+- ActiveRecord
+- Validations
 
 ## Setup
 
-Before you begin, fork and clone this repo, run `bundle install` and `rake db:migrate` to get started.
+Before you begin, fork and clone this repo, run `bundle install` and `bin/rails db:migrate` to get started.
 
 ## The Domain
 
@@ -27,7 +27,7 @@ We have several plants and each room could potentially house many plants. Plants
 
 Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one.
 
-1. Create the associations between models. You will have to alter the current schema to get your code working. Once you've set up your relationships properly, you will be able to run `rake db:seed` without errors, and confirm in a `rails console` that the house plants and rooms have been created with the proper relations.
+1. Create the associations between models. You will have to alter the current schema to get your code working. Once you've set up your relationships properly, you will be able to run `bin/rails db:seed` without errors, and confirm in a `rails console` that the house plants and rooms have been created with the proper relations.
 
 2. On the plants index page, a plant's `plant_type` should link to its show page.
 
