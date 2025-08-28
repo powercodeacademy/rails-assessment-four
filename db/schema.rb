@@ -14,6 +14,10 @@ ActiveRecord::Schema[7.1].define(version: 2019_06_10_081955) do
   create_table "house_plants", force: :cascade do |t|
     t.string "plant_type"
     t.integer "height"
+    t.integer "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_house_plants_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -21,4 +25,5 @@ ActiveRecord::Schema[7.1].define(version: 2019_06_10_081955) do
     t.integer "occupancy"
   end
 
+  add_foreign_key "house_plants", "rooms"
 end
