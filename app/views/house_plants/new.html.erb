@@ -16,11 +16,11 @@
 
   <%= f.label :plant_type %>
   <%= f.text_field :plant_type %>
-
+  <br><br>
   <%= f.label :height %>
   <%= f.number_field :height %>
-
+  <br><br>
   <%= f.collection_select :room_id, @rooms, :id, :name, include_blank: "Select a room..." %>
-
+  <br><br>
   <%= f.submit %>
 <% end %>
