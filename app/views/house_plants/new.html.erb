@@ -22,8 +22,10 @@
   <br />
   <br />
 
-  <%= f.label :room_id %>
-  <%= f.collection_select :room_id, @rooms, :id, :name, include_blank: "Select a room..." %>
+  <div class="<%= 'field_with_errors' if @house_plant.errors[:room].any? %>">
+    <%= f.label :room_id %>
+    <%= f.collection_select :room_id, @rooms, :id, :name, include_blank: "Select a room..." %>
+  </div>
   <br />
   <br />
 
