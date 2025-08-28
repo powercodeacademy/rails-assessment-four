@@ -1,5 +1,10 @@
 <h1>Rooms</h1>
 
+<%= form_with url: rooms_path, method: "get", local: true do |f| %>
+  <%= f.text_field :search, placeholder: "Search by name...", value: @search %>
+  <%= f.submit "Search" %>
+<% end %>
+
 <ol>
   <% @rooms.each do |room| %>
     <li><%= link_to room.name, room %></li>
