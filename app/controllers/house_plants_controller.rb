@@ -1,4 +1,5 @@
 class HousePlantsController < ApplicationController
+  before_action :set_rooms, only: [:new, :create]
   def index
     @house_plants = HousePlant.all
   end
@@ -9,13 +10,11 @@ class HousePlantsController < ApplicationController
 
   def new
     @house_plant = HousePlant.new
-    @rooms = Room.all
   end
 
   def create
     @house_plant = HousePlant.new(house_plant_params)
-    @rooms = Room.all
-    
+
     if @house_plant.save
       redirect_to @house_plant
     else
@@ -24,6 +23,10 @@ class HousePlantsController < ApplicationController
   end
 
   private
+
+  def set_rooms
+    @rooms = Room.all
+  end
 
   def house_plant_params
     params.require(:house_plant).permit(:plant_type, :height, :room_id)
