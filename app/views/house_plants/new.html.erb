@@ -5,13 +5,15 @@
   <%= form.label :height %>
   <%= form.number_field :height %>
 
-  <%= form.collection_select :room_id, Room.all, :id, :name, include_blank: "Choose a room:" %>
+  <%= form.collection_select :room_id, @rooms, :id, :name, include_blank: "Choose a room:" %>
 
   <%= form.submit %>
 <% end %>
 
 <% if @house_plant.errors.any? %>
   <ul>
-    <% @house_plant.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %>
+    <% @house_plant.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
   </ul>
 <% end %>

@@ -1,5 +1,6 @@
 class HousePlantsController < ApplicationController
   before_action :set_house_plant, only: %i[show]
+  before_action :set_rooms, only: %i[new create]
 
   def index
     @house_plants = HousePlant.all
@@ -9,16 +10,15 @@ class HousePlantsController < ApplicationController
 
   def new
     @house_plant = HousePlant.new
-    @house_plant.build_room
   end
 
   def create
     @house_plant = HousePlant.new(house_plant_params)
 
     if @house_plant.save
-      redirect_to house_plant_path(@house_plant)
+      redirect_to @house_plant
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -26,6 +26,10 @@ class HousePlantsController < ApplicationController
 
   def set_house_plant
     @house_plant = HousePlant.find(params[:id])
+  end
+
+  def set_rooms
+    @rooms = Room.all
   end
 
   def house_plant_params
