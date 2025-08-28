@@ -1,0 +1,8 @@
+<%= @room.name %>
+<%= @room.occupancy %>
+
+<ul>
+  <% @room.house_plants.each do |plant| %>
+    <li> <%= plant.plant_type %></li>
+  <% end %>
+</ul>
