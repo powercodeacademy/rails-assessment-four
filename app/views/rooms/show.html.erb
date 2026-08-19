@@ -1,0 +1,12 @@
+<h1><%= @room.name %></h1>
+<p><i>Maximum Occupancy: <%= @room.occupancy %></i></p>
+<p><i>Plants in Room:</i></p>
+<% if @room.house_plants.empty? %>
+  <i>This room currently has no plants.</i>
+<% else %>
+  <ul>
+    <% @room.house_plants.each do |plant| %>
+      <li><i><%= link_to plant.plant_type, house_plant_path(plant) %></i></li>
+    <% end %>
+  </ul>
+<% end %>
