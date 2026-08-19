@@ -1,7 +1,9 @@
 <h1>House Plants</h1>
 
+<%= link_to "New House Plant", new_house_plant_path %>
+
 <ol>
   <% @house_plants.each do |plant| %>
-    <li><%= plant.plant_type %></li>
+    <li><%= link_to plant.plant_type, house_plant_path(plant) %></li>
   <% end %>
 </ol>
