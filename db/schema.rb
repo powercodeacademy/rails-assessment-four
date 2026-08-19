@@ -10,10 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2019_06_10_081955) do
+ActiveRecord::Schema[7.1].define(version: 2026_08_19_143030) do
   create_table "house_plants", force: :cascade do |t|
     t.string "plant_type"
     t.integer "height"
+    t.integer "room_id"
+    t.index ["room_id"], name: "index_house_plants_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|

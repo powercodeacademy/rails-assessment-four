@@ -1,0 +1,13 @@
+<h1>Add a new Plant</h1>
+<%= form_with model: @house_plant do |f| %>
+  <%= f.label :plant_type, 'Plant Type: ' %>
+  <%= f.text_field :plant_type, required: true %><br>
+
+  <%= f.label :height, 'Height (inches): ' %>
+  <%= f.number_field :height, min: 1 %><br>
+
+  <%= f.label :room_id, 'Desired Room: ' %>
+  <%= f.collection_select :room_id, Room.all, :id, :name, required: true %><br>
+
+  <%= f.submit %>
+<% end %>
