@@ -1,0 +1,16 @@
+<h1>New House Plant</h1>
+
+<%= form_with model: @house_plant do |f| %>
+
+  <%= f.label :plant_type %>
+  <%= f.text_field :plant_type %>
+
+  <%= f.label :height %>
+  <%= f.number_field :height %>
+
+  <%= f.label :room_id, "Room" %>
+  <%= f.collection_select :room_id, Room.all, :id, :name %>
+
+  <%= f.submit %>
+
+<% end %>
